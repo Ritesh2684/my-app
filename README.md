@@ -51,7 +51,7 @@ Response should be
 7) Execute below command to get the list of deployed pods, it can take some time before pods are up and running depending on readiness probe.
 * `kubectl get pods`
 * Output should be 
-````
+```
 NAME                          READY   STATUS    RESTARTS   AGE
 go-app-5b687899fd-clt5z       1/1     Running   0          113s
 go-app-5b687899fd-lshqk       1/1     Running   0          113s

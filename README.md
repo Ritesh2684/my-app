@@ -65,7 +65,7 @@ java-app-57cd78855b-hwqqq     1/1     Running   0          113s
 9) Now trigger the url again from browser, http://localhost:8080/ it should work.
 
 10) Also check the status of the service, with below command, service should be succesfully deployed. 
-*`kubectl get services` 
+* `kubectl get services` 
 * Service is exposed with name as "hotelservice".
         
 11)To test the service from another pod in the same cluster, create a test image which supports curl command.
@@ -84,7 +84,7 @@ java-app-57cd78855b-hwqqq     1/1     Running   0          113s
 		 
 16)To redirect the traffic in desired way, we need to create the ingress rules. Since, by default Kubernetes cluster is not installed with Ingress Contoller, I am selecting istio as Ingress controller in this scenario.
 
-17To install istio, execute the below command,
+17) To install istio, execute the below command,
 		  `kubectl apply -f istio-ingress-1.1.2.yaml`
 		  
 18) Verify if istio is successfully installed, execute below command from test-image pod, again after ssh as mentioned in 15.
@@ -97,7 +97,8 @@ java-app-57cd78855b-hwqqq     1/1     Running   0          113s
 * Also, Virtual Service, will redirect all the traffic matching url / towards, /hotels, to keep it short i have redirect to version v2 in this scenario.
 
 20) To verify, execute below command from test-image pod, again after ssh as mentioned in 15. It should provide weighted distribution.
-	`for i in 1 2 3 4 5; do curl http://hotelservice:8080/health; done`
+* `for i in 1 2 3 4 5; do curl http://hotelservice:8080/health; done`
+
 Although, istio installation works fine on docker desktop, still ingress rules might not be successfully executed due to restricted network policies and firewalls. This approach should work on any cloud provider.
 
             

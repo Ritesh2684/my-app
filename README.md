@@ -5,9 +5,9 @@ Case Study - A/B Test Infrastructure
 ## Environment
 
 Environment details,
-*Docker to build images
-*Docker Desktop Kubernetes for Windows as deployment cluster
-*Istio as ingress controller
+* Docker to build images
+* Docker Desktop Kubernetes for Windows as deployment cluster
+* Istio as ingress controller
 
 ## Solution
 

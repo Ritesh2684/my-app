@@ -3,9 +3,9 @@
 Case Study - A/B Test Infrastructure
 
 ## Environment
-Docker to build images
-Docker Desktop Kubernetes for Windows as deployment cluster
-Istio as ingress controller
+*Docker to build images
+*Docker Desktop Kubernetes for Windows as deployment cluster
+*Istio as ingress controller
 
 ## Solution
 
@@ -42,17 +42,19 @@ As a solution, I have created ,
 6) Execute the below command for deployment of Deployment and Service,
          `kubectl apply -f deployment.yml` 
 Response should be 
-deployment.apps/java-app created
-deployment.apps/go-app created
-service/hotelservice created
+*deployment.apps/java-app created
+*deployment.apps/go-app created
+*service/hotelservice created
 
 7) Execute below command to get the list of deployed pods, it can take some time before pods are up and running depending on readiness probe.
-          `kubectl get pods`
-Output should be 
+* `kubectl get pods`
+* Output should be 
+````
 NAME                          READY   STATUS    RESTARTS   AGE
 go-app-5b687899fd-clt5z       1/1     Running   0          113s
 go-app-5b687899fd-lshqk       1/1     Running   0          113s
 java-app-57cd78855b-hwqqq     1/1     Running   0          113s
+```
 
 8) To test the application from local browser, execute the below command,and keep the console open
           `kubectl port-forward <pod-name> 8080:8080` example in this case:- kubectl port-forward sample-app-789f8c5bb7-7c6dw 8080:8080

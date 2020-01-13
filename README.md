@@ -59,12 +59,17 @@ java-app-57cd78855b-hwqqq     1/1     Running   0          113s
 ```
 
 8) To test the application from local browser, execute the below command,and keep the console open
-          `kubectl port-forward <pod-name> 8080:8080` example in this case:- kubectl port-forward sample-app-789f8c5bb7-7c6dw 8080:8080
+  * `kubectl port-forward <pod-name> 8080:8080` 
+  *  example in this case:- kubectl port-forward sample-app-789f8c5bb7-7c6dw 8080:8080
+  
 9) Now trigger the url again from browser, http://localhost:8080/ it should work.
-10) Also check the status of the service, with below command, service should be succesfully deployed. `kubectl get services` Service is exposed with name as "hotelservice".
+
+10) Also check the status of the service, with below command, service should be succesfully deployed. 
+*`kubectl get services` 
+* Service is exposed with name as "hotelservice".
         
 11)To test the service from another pod in the same cluster, create a test image which supports curl command.
-           `docker build -t test-image test-image/`
+* `docker build -t test-image test-image/`
            
 12)Deploy the test-image using below command, 
            `kubectl apply -f sample-test.yml` 
